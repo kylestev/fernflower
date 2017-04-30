@@ -34,12 +34,12 @@ import java.util.List;
 
 public class InitializerProcessor {
   public static void extractInitializers(ClassWrapper wrapper) {
-    MethodWrapper method = wrapper.getMethodWrapper(CodeConstants.CLINIT_NAME, "()V");
-    if (method != null && method.root != null) {  // successfully decompiled static constructor
-      extractStaticInitializers(wrapper, method);
+    MethodWrapper meth = wrapper.getMethodWrapper(CodeConstants.CLINIT_NAME, "()V");
+    if (meth != null && meth.root != null) {  // successfully decompiled static constructor
+      //extractStaticInitializers(wrapper, meth);
     }
 
-    extractDynamicInitializers(wrapper);
+    //extractDynamicInitializers(wrapper);
 
     // required e.g. if anonymous class is being decompiled as a standard one.
     // This can happen if InnerClasses attributes are erased
